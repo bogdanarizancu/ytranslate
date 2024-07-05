@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>YouTube Video Translator</title>
+	<meta http-equiv="Content-Security-Policy"
+		content="default-src 'self'; 
+		script-src 'self' 'unsafe-inline' https://apis.google.com https://accounts.google.com https://cdn.tailwindcss.com; 
+		style-src 'self' 'unsafe-inline'; frame-src 'self' https://content.googleapis.com https://content-youtube.googleapis.com; 
+		connect-src 'self' https://translation.googleapis.com https://www.googleapis.com;
+		connect-src 'self' https://csi.gstatic.com;
+		">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://apis.google.com/js/api.js"></script>
+	<script src="https://accounts.google.com/gsi/client" async defer></script>
+	<script src="./dist/main.js" defer></script>
+</head>
+
+<body class="bg-gray-200">
+	<div id="app" class="container mx-auto p-4">
+		<div class="container mx-auto p-4">
+			<button id="sign-in-button"
+				class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Sign
+				In</button>
+			<button id="sign-out-button"
+				class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Sign
+				Out</button>
+			<form id="translation-form" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+				<div class="mb-4">
+					<label class="block text-gray-700 text-sm font-bold mb-2" for="video-id">Video ID</label>
+					<input
+						class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+						id="video-id" type="text" placeholder="Video ID" value="nx4FK4I_YB0">
+				</div>
+				<div class="mb-4">
+					<label class="block text-gray-700 text-sm font-bold mb-2" for="title">Title</label>
+					<input
+						class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+						id="title" type="text" placeholder="Title"
+						value="3 Hours of Cozy Rain 🌧️ and Thunder 🌩️ Sounds on a Porch - Ultimate Relaxation and Sleep Aid">
+				</div>
+				<div class="mb-6">
+					<label class="block text-gray-700 text-sm font-bold mb-2" for="description">Description</label>
+					<textarea
+						class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+						rows="12" id="description"
+						placeholder="Description">Immerse yourself in the serene ambiance of a cozy porch during a rainstorm with this 3-hour video. Perfect for relaxation, sleep, study, or meditation, the soothing sounds of rain 🌧️ and distant thunder 🌩️ create a peaceful atmosphere that will calm your mind and body. Enjoy the gentle glow of lanterns 🕯️ and the rhythmic patter of rain, transporting you to a tranquil evening retreat 🌙. Close your eyes, breathe deeply, and let the stresses of the day melt away. Subscribe for more relaxing nature sounds and ambient videos. #RainSounds #Thunderstorm #RelaxingSounds #SleepAid #AmbientSounds #NatureSounds #StudyMusic #Meditation #ASMR #CozyAmbiance</textarea>
+				</div>
+				<div class="flex items-center justify-between">
+					<button
+						class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+						type="submit">Translate and Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>
