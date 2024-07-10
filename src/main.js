@@ -68,18 +68,10 @@ async function handleSubmit(e) {
 	const videoId = videoIdInput.value;
 	const title = titleInput.value;
 	const description = descriptionInput.value;
-	const targetLanguages = [
-		"af", "sq", "am", "ar", "hy", "az", "bn", "eu", "be", "bs", "bg", "ca",
-		"zh-CN", "zh-TW", "hr", "cs", "da", "nl", "et", "fil", "fi", "fr", "gl",
-		"ka", "de", "el", "gu", "ha", "he", "hi", "hu", "is", "ig", "id", "ga",
-		"it", "ja", "jv", "kn", "kk", "km", "ko", "ky", "lo", "lv", "lt", "lb",
-		"mk", "ml", "mr", "mn", "ne", "no", "ps", "fa", "pl", "pt", "pa", "ro",
-		"ru", "gd", "sr", "si", "sk", "sl", "es", "sw", "sv", "ta", "te", "th",
-		"tr", "uk", "ur", "uz", "vi", "cy", "zu"
-	];
+
 	let localizations = {};
 
-	for (const language of targetLanguages) {
+	for (const language of config.TRANSLATION_TARGET_LANGUAGES) {
 	    const [translatedTitle, translatedDescription] = await Promise.all([
 	        translateText(title, language),
 	        translateText(description, language),
