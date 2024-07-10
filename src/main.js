@@ -12,7 +12,6 @@ const SCOPES = 'https://www.googleapis.com/auth/youtube.force-ssl';
 
 let tokenClient;
 let accessToken = null;
-let targetLanguages = config.TRANSLATION_TARGET_LANGUAGES;
 
 function handleClientLoad() {
 	gapi.load('client', initClient);
@@ -72,7 +71,7 @@ async function handleSubmit(e) {
 
 	let localizations = {};
 
-	for (const language of targetLanguages) {
+	for (const language of config.TRANSLATION_TARGET_LANGUAGES) {
 	    const [translatedTitle, translatedDescription] = await Promise.all([
 	        translateText(title, language),
 	        translateText(description, language),
@@ -82,7 +81,6 @@ async function handleSubmit(e) {
 	        description: translatedDescription
 	    };
 	}
-	console.log(localizations);
 
 	// Submit the translation to YouTube
 	try {

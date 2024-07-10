@@ -2,5 +2,5 @@ const GOOGLE_TRANSLATE_API_KEY = '';
 const TRANSLATION_TARGET_LANGUAGES = ['ro', 'pt', 'ru', 'de', 'fr', 'th', 'ab', 'ar', 'vi', 'es', 'id', 'it', 'pl', 'uk', 'nl', 'tr', 'ko', 'no', 'cs', 'da', 'zh', 'ik', 'hr', 'sk', 'bg', 'sv', 'hy', 'sr'];
 const YOUTUBE_CLIENT_ID = '';
 const YOUTUBE_API_KEY = '';
-const config = { GOOGLE_TRANSLATE_API_KEY, YOUTUBE_CLIENT_ID, YOUTUBE_API_KEY };
+const config = { GOOGLE_TRANSLATE_API_KEY, YOUTUBE_CLIENT_ID, YOUTUBE_API_KEY, TRANSLATION_TARGET_LANGUAGES };
 export default config;
