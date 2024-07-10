@@ -19,11 +19,11 @@ function handleClientLoad() {
 
 function initClient() {
 	gapi.client.init({
-		apiKey: config.API_KEY,
+		apiKey: config.YOUTUBE_API_KEY,
 		discoveryDocs: DISCOVERY_DOCS
 	}).then(() => {
 		tokenClient = google.accounts.oauth2.initTokenClient({
-			client_id: config.CLIENT_ID,
+			client_id: config.YOUTUBE_CLIENT_ID,
 			scope: SCOPES,
 			callback: (tokenResponse) => {
 				accessToken = tokenResponse.access_token;
